@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev:serve": "cross-env project=order branch=sit NODE_ENV=dev vue-cli-service serve",
+    "sit:build": "cross-env branch=sit vue-cli-service build",
+    "uat:build": "cross-env branch=uat vue-cli-service build",
+    "sandbox:build": "cross-env branch=sandbox vue-cli-service build",
+    "build": "cross-env branch=master vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -18,9 +21,11 @@
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-service": "^3.12.0",
     "babel-eslint": "^10.0.1",
+    "cross-env": "^6.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {
